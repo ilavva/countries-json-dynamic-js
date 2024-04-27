@@ -22,6 +22,7 @@ function f1(countryName) {
 populateInfoOnScreen("Israel");
 
 function li_list_object_values(data_array, preffix = "") {
+    if (data_array === undefined) return "";
     let li_list = "";
     for (let i of Object.values(data_array)) {
         li_list += `<li>${preffix}${i} </li>`;
@@ -30,6 +31,7 @@ function li_list_object_values(data_array, preffix = "") {
 }
 
 function li_list_object_entries_values(data_array) {
+    if (data_array === undefined) return "";
     let li_list = "";
     for (let [_, i] of Object.entries(data_array)) {
         li_list += `<li>${i} </li>`;
@@ -37,13 +39,14 @@ function li_list_object_entries_values(data_array) {
     return `<ul>${li_list}</ul>`;;
 }
 function li_list_object_entries_values_with_index(data_array, index) {
+    if (data_array === undefined) return "";
     let li_list = "";
     for (let [i, v] of Object.entries(data_array)) {
         li_list += `<li>${i}: ${v[index]} </li>`;
     }
     return `<ul>${li_list}</ul>`;;
 }
-function clearAll() {
+function clearUpdatedFieldsAll() {
     const elems = document.querySelectorAll(".data-updated");
     for (let elem of Object.values(elems)) {
         elem.innerHTML = "";
@@ -57,7 +60,10 @@ function populateInfoOnScreen(countryName) {
 
     // First of all, lets get the country object
     let theCountryObj = f1(countryName);
-    clearAll();
+    if (theCountryObj === undefined) {
+        return;
+    }
+    clearUpdatedFieldsAll();
     let name = theCountryObj["name"]["official"];
 
     if (name.length < 2) name = theCountryObj.name.common
