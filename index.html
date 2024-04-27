@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <section class="selection">
+            <p class="title">Its a small world after all - learn about all of its countries</p>
+            <div class="row-centered">
+                <div class="select-data">
+                    <input class="data" id="selectCountry" list="dl_selectCountry" name="selectCountry"
+                        oninput="populateInfoOnScreen(this.value);" palceholder="Search for a country">
+                    <i class="fa fa-search"></i>
+                    <datalist id="dl_selectCountry"></datalist>
+                </div>
+
+                <button id="btn_search" class="btn_search">GO</button>
+            </div>
+        </section>
+        <section class="details">
+            <div class="row">
+                <div id="countryNameDiv" class="title"></div>
+                <img src="" id="myFlagImg" alt="israel flag" class="title">
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="infoDiv">
+                        <label for="myLanguagesDiv">Languages:</label>
+                        <div id="myLanguagesDiv" class="list"></div>
+                    </div>
+                    <div class="infoDiv">
+                        <label for="myPopulationDiv">Population:</label>
+                        <div id="myPopulationDiv"></div>
+                    </div>
+                    <div class="infoDiv">
+                        <label for="myCallingCodesDiv">Calling codes:</label>
+                        <div id="myCallingCodesDiv"></div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="infoDiv">
+                        <label for="myCurrenciesDiv">Currencies:</label>
+                        <div id="myCurrenciesDiv"></div>
+                    </div>
+
+                    <div class="infoDiv">
+                        <label for="myCurrenciesDiv_2">Currencies:</label>
+                        <div id="myCurrenciesDiv_2"></div>
+                    </div>
+
+
+                    <div class="infoDiv">
+                        <label for="myBordersDiv">Borders:</label>
+                        <div id="myBordersDiv" class="list"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <script src="countries_list.js"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>

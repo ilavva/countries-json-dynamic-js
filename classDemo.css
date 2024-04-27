@@ -1,0 +1,29 @@
+:root {
+    --text-color: rgb(75, 92, 81);
+    --text-second-color: gray;
+    --background-color: white;
+    --backgroung-sec-color: rgb(218, 216, 216);
+}
+
+body {
+    font-size: 2rem;
+}
+
+#mydivPopulation {
+    color: var(--text-color);
+    font-weight: bold;
+    text-decoration-color: var(--text-second-color);
+    text-shadow: 2px 2px 1px var(--text-second-color);
+}
+
+button {
+    padding: 1rem;
+    font-size: 1.6rem;
+    border-radius: 0.5rem;
+    border: outset;
+}
+
+button:hover {
+    border: inset;
+    background-color: var(--backgroung-sec-color);
+}
