@@ -169,13 +169,36 @@ div.select-data {
     width:100%;
     border: none;
 }
-
+/* .row-centered >*, .row-centered, .select-data{
+    border: 1px dashed blue;
+} */
+.row-centered .select-data>*{
+    margin: 0;
+}
 @media screen and (max-width:600px) {
     .row {
         flex-wrap: wrap;
     }
-    .col {width:100%;}
-
+    .col {width:100%;
+    }
+    .row-centered {
+        width: 100%;
+        flex-wrap: wrap;
+        margin:auto;
+    }
+    .row-centered .select-data {
+        display: flex;
+        justify-content: space-between;
+        
+        padding: 3px;
+    }
+    .row-centered>* {
+        padding: 10px 30px;
+    }
+    .select-data input {
+        width: 100%;
+    }
+    
 }
 
 
