@@ -19,7 +19,7 @@ function f1(countryName) {
 //      try to change Israel to something else,
 //      for example : Switzerland, Cuba, Bahrain, Chaina, Taiwan, South Africa
 //      populateInfoOnScreen("Taiwan");
-populateInfoOnScreen("Switzerland");
+populateInfoOnScreen("Israel");
 
 function li_list_object_values(data_array, preffix = "") {
     let li_list = "";
