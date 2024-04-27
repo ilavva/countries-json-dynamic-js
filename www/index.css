@@ -20,12 +20,9 @@ img {
 }
 
 .infoDiv {
-    border-radius: 2px;
-    border: 2px solid var(--border-color);
-    background-color: var(--background-color);
-    padding: 10px;
-    max-width: 300px;
-    margin: 20px;
+    width:100%;
+    padding: 5px;
+    margin: 10px;
     text-align: start;
 }
 
@@ -152,15 +149,17 @@ input {
     width: auto;
     height: 3rem;
 }
+.symbol_img {
+    width:200px;
+    border: none;
+}
 
 .col {
     border: 1px var(--border-col-color) solid;
     width: 50%;
 }
 
-.infoDiv {
-    border: none;
-}
+
 
  
 

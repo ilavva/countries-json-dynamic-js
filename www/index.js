@@ -19,7 +19,7 @@ function f1(countryName) {
 //      try to change Israel to something else,
 //      for example : Switzerland, Cuba, Bahrain, Chaina, Taiwan, South Africa
 //      populateInfoOnScreen("Taiwan");
-populateInfoOnScreen("South Africa");
+populateInfoOnScreen("Switzerland");
 
 function li_list_object_values(data_array, preffix = "") {
     let li_list = "";
@@ -33,6 +33,13 @@ function li_list_object_entries_values(data_array) {
     let li_list = "";
     for (let [_, i] of Object.entries(data_array)) {
         li_list += `<li>${i} </li>`;
+    }
+    return `<ul>${li_list}</ul>`;;
+}
+function li_list_object_entries_values_with_index(data_array, index) {
+    let li_list = "";
+    for (let [i, v] of Object.entries(data_array)) {
+        li_list += `<li>${i}: ${v[index]} </li>`;
     }
     return `<ul>${li_list}</ul>`;;
 }
@@ -99,8 +106,10 @@ function populateInfoOnScreen(countryName) {
         li_list_object_values(theCountryObj["borders"]);
 
     // --------------- native name -----------------------
+
+
     document.querySelector("#myNativeNameDiv").innerHTML =
-        "myNativeNameDiv";
+        li_list_object_entries_values_with_index(theCountryObj["name"]["nativeName"], "official");
 
     //--------------currencies  ---------
     let allCurrenciesStr = "<ul>";
@@ -115,15 +124,18 @@ function populateInfoOnScreen(countryName) {
 
     //---------------code--------------------------------
     document.querySelector("#myCodeDiv").innerHTML =
-        "myCodeDiv";
+        li_list_object_values([theCountryObj["cca2"], theCountryObj["ccn3"], theCountryObj["cca3"], theCountryObj["cioc"]]);
 
     //--------------name-------------------------------------
     document.querySelector("#myNameDiv").innerHTML =
-        "myNameDiv";
+        theCountryObj["name"]["official"];
     //--------------symbol-------------------------------------
+    document.querySelector("#mySymbolDiv")
+        .setAttribute("src", "");
+    document.querySelector("#mySymbolDiv")
+        .setAttribute("src", theCountryObj["coatOfArms"]["svg"]);
 
-    document.querySelector("#mySymbolDiv").innerHTML =
-        "mySymbolDiv";
+
 }
 
 //============================================================
