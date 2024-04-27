@@ -236,7 +236,7 @@ function showMaps() {
 function showLanguages() {
     let html = "<ul>";
     for (const lang of Object.keys(theCountyObj.languages)) {
-        html += `<li>${lang} - ${theCountyObj.languages[lang]}</li>`;
+        html += `<li>${theCountyObj.languages[lang]}</li>`;
     }
     html += "</ul>"
     document.querySelector("#myLanguagesDiv").innerHTML = html;
@@ -244,7 +244,7 @@ function showLanguages() {
 
 function showCapitalLocation() {
 
-    const latlong = theCountyObj["capitalInfo"]["latlng"];
+    const latlong = ["latlng"];
 
     document.querySelector("#capital_Locaton").innerHTML = `capital location: Lat: ${latlong[0]}, Lng: ${latlong[1]} `;
 }

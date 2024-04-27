@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Hebrew:wght@100..900&family=Noto+Serif+Hebrew:wght@100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
 :root {
     --border-color: rgb(223, 188, 111);
     --border-col-color: black;
@@ -38,6 +40,8 @@ img {
 
 .infoDiv .list ul {
     display: flex;
+    flex-wrap: wrap;
+    width:100%;
 }
 
 .infoDiv .list ul li {
@@ -157,3 +161,9 @@ input {
 .infoDiv {
     border: none;
 }
+
+ 
+
+
+  
+  
