@@ -55,6 +55,10 @@ function clearUpdatedFieldsAll() {
         .setAttribute("src", "");
     document.querySelector("#mySymbolDiv")
         .setAttribute("src", "");
+    document.querySelector("#maps_GoogleMaps")
+        .setAttribute("href", "")
+    document.querySelector("#maps_OpenStreetMaps")
+        .setAttribute("href", "");
 }
 function populateInfoOnScreen(countryName) {
 
@@ -151,6 +155,11 @@ function populateInfoOnScreen(countryName) {
     document.querySelector("#mySymbolDiv")
         .setAttribute("src", theCountryObj["coatOfArms"]["svg"]);
 
+    //----------- maps ------------------------------------
+    document.querySelector("#maps_GoogleMaps")
+        .setAttribute("href", theCountryObj["maps"]["googleMaps"]);
+    document.querySelector("#maps_OpenStreetMaps")
+        .setAttribute("href", theCountryObj["maps"]["openStreetMaps"]);
 
 }
 
