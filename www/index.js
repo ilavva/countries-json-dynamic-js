@@ -43,10 +43,21 @@ function li_list_object_entries_values_with_index(data_array, index) {
     }
     return `<ul>${li_list}</ul>`;;
 }
-
+function clearAll() {
+    const elems = document.querySelectorAll(".data-updated");
+    for (let elem of Object.values(elems)) {
+        elem.innerHTML = "";
+    }
+    document.querySelector("#myFlagImg")
+        .setAttribute("src", "");
+    document.querySelector("#mySymbolDiv")
+        .setAttribute("src", "");
+}
 function populateInfoOnScreen(countryName) {
+
     // First of all, lets get the country object
     let theCountryObj = f1(countryName);
+    clearAll();
     let name = theCountryObj["name"]["official"];
 
     if (name.length < 2) name = theCountryObj.name.common
@@ -130,8 +141,7 @@ function populateInfoOnScreen(countryName) {
     document.querySelector("#myNameDiv").innerHTML =
         theCountryObj["name"]["official"];
     //--------------symbol-------------------------------------
-    document.querySelector("#mySymbolDiv")
-        .setAttribute("src", "");
+
     document.querySelector("#mySymbolDiv")
         .setAttribute("src", theCountryObj["coatOfArms"]["svg"]);
 
